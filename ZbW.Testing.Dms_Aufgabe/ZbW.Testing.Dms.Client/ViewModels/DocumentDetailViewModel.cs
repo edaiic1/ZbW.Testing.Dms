@@ -169,6 +169,22 @@ namespace ZbW.Testing.Dms.Client.ViewModels
             }
         }
 
+        private MetadataItem erstelleMetaItem()
+
+        {
+            MetadataItem mdI = new MetadataItem();
+            mdI._pfad = this._filePath;
+            mdI._dateityp = this.SelectedTypItem;
+            mdI.hinzugefuegtAm = DateTime.Now;
+            mdI.loeschungAktiv = this.IsRemoveFileEnabled;
+            mdI.stichwoerter = this.Stichwoerter;
+            mdI._datum = (DateTime)this.ValutaDatum;
+            mdI._bezeichnung = this.Bezeichnung;
+
+            return mdI;
+        }
+
+
         private Boolean pflichtFeldUeberpruefer()
         {
 
@@ -199,14 +215,7 @@ namespace ZbW.Testing.Dms.Client.ViewModels
         }
 
 
-        private MetadataItem erstelleItem()
 
-        {
-            MetadataItem mdI = new MetadataItem();
-            
-
-            return mdI;
-        }
   
 
 
