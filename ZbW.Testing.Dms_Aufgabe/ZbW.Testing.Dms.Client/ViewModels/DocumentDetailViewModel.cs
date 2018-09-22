@@ -1,4 +1,8 @@
-﻿namespace ZbW.Testing.Dms.Client.ViewModels
+﻿using System.Security.Cryptography.X509Certificates;
+using System.Windows;
+using ZbW.Testing.Dms.Client.Model;
+
+namespace ZbW.Testing.Dms.Client.ViewModels
 {
     using System;
     using System.Collections.Generic;
@@ -32,6 +36,8 @@
 
         private DateTime? _valutaDatum;
 
+        private MetadataItem _metaData;
+
         public DocumentDetailViewModel(string benutzer, Action navigateBack)
         {
             _navigateBack = navigateBack;
@@ -41,6 +47,7 @@
 
             CmdDurchsuchen = new DelegateCommand(OnCmdDurchsuchen);
             CmdSpeichern = new DelegateCommand(OnCmdSpeichern);
+            _metaData = new MetadataItem();
         }
 
         public string Stichwoerter
@@ -162,11 +169,36 @@
             }
         }
 
+        private Boolean pflichtFeldUeberpruefer()
+        {
+
+            if (_bezeichnung != null && _valutaDatum != null && _selectedTypItem != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         private void OnCmdSpeichern()
         {
-            // TODO: Add your Code here
+            if (pflichtFeldUeberpruefer() == false)
+            {
+                MessageBox.Show("Mindestens 1 Pflichtfeld wurde vergessen");
+            }
 
-            _navigateBack();
+            else if (pflichtFeldUeberpruefer() == true)
+            {
+
+
+
+                MessageBox.Show("Dokument gespeichert");
+            }
+            
+
+
         }
+
+
     }
 }
