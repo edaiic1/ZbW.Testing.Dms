@@ -196,8 +196,18 @@ namespace ZbW.Testing.Dms.Client.ViewModels
             }
             
 
-
         }
+
+
+        private MetadataItem erstelleItem()
+
+        {
+            MetadataItem mdI = new MetadataItem();
+            
+
+            return mdI;
+        }
+  
 
 
     }
