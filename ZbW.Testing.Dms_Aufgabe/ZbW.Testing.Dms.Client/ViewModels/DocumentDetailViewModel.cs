@@ -200,7 +200,7 @@ namespace ZbW.Testing.Dms.Client.ViewModels
         {
             if (pflichtFeldUeberpruefer() == false)
             {
-                MessageBox.Show("Mindestens 1 Pflichtfeld wurde vergessen");
+                MessageBox.Show("Es müssen alle Pflichtfelder ausgefüllt werden!");
             }
 
             else if (pflichtFeldUeberpruefer() == true)
