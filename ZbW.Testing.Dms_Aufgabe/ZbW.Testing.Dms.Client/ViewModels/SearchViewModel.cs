@@ -1,4 +1,6 @@
-﻿namespace ZbW.Testing.Dms.Client.ViewModels
+﻿using ZbW.Testing.Dms.Client.Services;
+
+namespace ZbW.Testing.Dms.Client.ViewModels
 {
     using System.Collections.Generic;
 
@@ -20,6 +22,9 @@
 
         private List<string> _typItems;
 
+
+        private DateiService _dateiService;
+        private SuchService _suchService;
         public SearchViewModel()
         {
             TypItems = ComboBoxItems.Typ;
@@ -27,6 +32,10 @@
             CmdSuchen = new DelegateCommand(OnCmdSuchen);
             CmdReset = new DelegateCommand(OnCmdReset);
             CmdOeffnen = new DelegateCommand(OnCmdOeffnen, OnCanCmdOeffnen);
+
+            _suchService = new SuchService();
+            _dateiService = new DateiService();
+            _filteredMetadataItems = _suchService.GetAlleMetadataItems();
         }
 
         public DelegateCommand CmdOeffnen { get; }
