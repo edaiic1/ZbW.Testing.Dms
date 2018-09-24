@@ -180,6 +180,7 @@ namespace ZbW.Testing.Dms.Client.ViewModels
             mdI.stichwoerter = this.Stichwoerter;
             mdI._datum = (DateTime)this.ValutaDatum;
             mdI._bezeichnung = this.Bezeichnung;
+            mdI._benutzer = this.Benutzer;
 
             return mdI;
         }

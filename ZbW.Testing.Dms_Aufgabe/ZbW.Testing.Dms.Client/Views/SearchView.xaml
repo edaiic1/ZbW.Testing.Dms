@@ -39,12 +39,17 @@
         <DataGrid Grid.Row="1"
                   ItemsSource="{Binding FilteredMetadataItems}"
                   SelectedItem="{Binding SelectedMetadataItem}"
-                  AutoGenerateColumns="True">
-            <!--TODO: Remove AutoGenerateColumns="True" and specify your own columns -->
-            <!--<DataGrid.Columns>
-                <DataGridTextColumn Header="Typ" Binding="{Binding Typ}"/>
-                <DataGridTextColumn Header="Bezeichnung" Binding="{Binding Bezeichnung}"/>
-            </DataGrid.Columns>-->
+                  AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Bezeichnung" Binding="{Binding _bezeichnung}"/>
+                <DataGridTextColumn Header="Typ" Binding="{Binding _dateityp}"/>
+                <DataGridTextColumn Header="Valuta-Datum" Binding = "{Binding _datum}"/>
+                <DataGridTextColumn Header="Eingelesen von" Binding = "{Binding _benutzer}"/>
+                <DataGridTextColumn Header="Eingelesen am" Binding = "{Binding hinzugefuegtAm}"/>
+                <DataGridTextColumn Header="Stichwörter" Binding = "{Binding stichwoerter}"/>
+                <DataGridTextColumn Header="Dateipfad" Binding="{Binding _pfadNeu}"/>
+            </DataGrid.Columns>
+
         </DataGrid>
 
         <Button Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Content="Öffnen" Width="100"/>

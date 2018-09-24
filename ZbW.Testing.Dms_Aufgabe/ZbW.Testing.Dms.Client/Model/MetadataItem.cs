@@ -23,6 +23,7 @@ namespace ZbW.Testing.Dms.Client.Model
 
         public bool loeschungAktiv { get; set; }
 
+        public string _benutzer { get; set;  }
 
 
         private RepoService _repoService;
@@ -44,11 +45,9 @@ namespace ZbW.Testing.Dms.Client.Model
             var dateityp = Path.GetExtension(mdI._pfadAlt);
             var zielDir = Path.Combine(repoDir, jahr.ToString());
             var dateiName = _dateiService.getDateiName(docId, dateityp);
-
             var mdIDateiname = _dateiService.getDateiNamenMetaFile(docId);
 
-            
-            
+
             var xmlSeri = new XmlSerializer(typeof(MetadataItem));
             var streamWrite = new StreamWriter(Path.Combine(zielDir, mdIDateiname));
             xmlSeri.Serialize(streamWrite, mdI);
