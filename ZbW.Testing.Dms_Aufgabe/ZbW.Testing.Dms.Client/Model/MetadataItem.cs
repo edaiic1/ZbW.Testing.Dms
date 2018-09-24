@@ -43,9 +43,17 @@ namespace ZbW.Testing.Dms.Client.Model
             var metaDateiName = _dateiService.getDateiNamenMetaFile(docId);
             var dateiName = _dateiService.getDateiName(docId, dateityp);
 
-            
-            File.Copy(mdI._pfadAlt, Path.Combine(zielDir, dateiName));
 
+
+            if (!Directory.Exists(zielDir))
+            {
+                System.IO.Directory.CreateDirectory(zielDir);
+                File.Copy(mdI._pfadAlt, Path.Combine(zielDir, dateiName));
+            }
+            else
+            {
+                File.Copy(mdI._pfadAlt, Path.Combine(zielDir, dateiName));
+            }
 
         }
 
