@@ -173,7 +173,7 @@ namespace ZbW.Testing.Dms.Client.ViewModels
 
         {
             MetadataItem mdI = new MetadataItem();
-            mdI._pfad = this._filePath;
+            mdI._pfadAlt = this._filePath;
             mdI._dateityp = this.SelectedTypItem;
             mdI.hinzugefuegtAm = DateTime.Now;
             mdI.loeschungAktiv = this.IsRemoveFileEnabled;
@@ -206,7 +206,7 @@ namespace ZbW.Testing.Dms.Client.ViewModels
             else if (pflichtFeldUeberpruefer() == true)
             {
 
-
+                _metaData.Dateihinzufuegen(erstelleMetaItem(), IsRemoveFileEnabled);
 
                 MessageBox.Show("Dokument gespeichert");
             }
@@ -215,7 +215,7 @@ namespace ZbW.Testing.Dms.Client.ViewModels
         }
 
 
-
+    
   
 
 
