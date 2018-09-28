@@ -28,7 +28,7 @@ namespace ZbW.Testing.Dms.Client.Services
 
         public void oeffneDatei(MetadataItem mdI)
         {
-            Process.Start(mdI._pfadNeu);
+            Process.Start(mdI._pfadAlt);
         }
 
         public String serealisieren(MetadataItem mdI)

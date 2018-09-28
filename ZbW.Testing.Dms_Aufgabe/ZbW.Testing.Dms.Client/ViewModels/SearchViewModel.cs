@@ -120,7 +120,7 @@ namespace ZbW.Testing.Dms.Client.ViewModels
 
         private void OnCmdOeffnen()
         {
-            // TODO: Add your Code here
+            _dateiService.oeffneDatei(SelectedMetadataItem);
         }
 
         private void OnCmdSuchen()
