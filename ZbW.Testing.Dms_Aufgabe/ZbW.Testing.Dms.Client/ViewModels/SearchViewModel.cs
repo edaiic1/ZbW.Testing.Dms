@@ -1,4 +1,5 @@
-﻿using ZbW.Testing.Dms.Client.Services;
+﻿using System;
+using ZbW.Testing.Dms.Client.Services;
 
 namespace ZbW.Testing.Dms.Client.ViewModels
 {
@@ -10,7 +11,7 @@ namespace ZbW.Testing.Dms.Client.ViewModels
     using ZbW.Testing.Dms.Client.Model;
     using ZbW.Testing.Dms.Client.Repositories;
 
-    internal class SearchViewModel : BindableBase
+    public class SearchViewModel : BindableBase
     {
         private List<MetadataItem> _filteredMetadataItems;
 
@@ -124,12 +125,14 @@ namespace ZbW.Testing.Dms.Client.ViewModels
 
         private void OnCmdSuchen()
         {
-            // TODO: Add your Code here
+            FilteredMetadataItems = _suchService.FilterMetadataItems(_selectedTypItem, _suchbegriff);
         }
 
         private void OnCmdReset()
         {
-            // TODO: Add your Code here
+            Suchbegriff = String.Empty;
+            SelectedTypItem = null;
+            FilteredMetadataItems = _suchService.MetadataItems;
         }
     }
 }
