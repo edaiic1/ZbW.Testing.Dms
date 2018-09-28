@@ -210,6 +210,7 @@ namespace ZbW.Testing.Dms.Client.ViewModels
                 _metaData.Dateihinzufuegen(erstelleMetaItem(), IsRemoveFileEnabled);
 
                 MessageBox.Show("Dokument gespeichert");
+                _navigateBack();
             }
             
 

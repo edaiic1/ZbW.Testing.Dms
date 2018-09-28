@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Xml.Serialization;
@@ -69,7 +70,14 @@ namespace ZbW.Testing.Dms.Client.Model
 
 
 
-
+            if (loeschungAktiv)
+            {
+                var task = Task.Factory.StartNew(() =>
+                {
+                    Task.Delay(500);
+                    File.Delete(mdI._pfadAlt);
+                });
+            }
 
 
         }
