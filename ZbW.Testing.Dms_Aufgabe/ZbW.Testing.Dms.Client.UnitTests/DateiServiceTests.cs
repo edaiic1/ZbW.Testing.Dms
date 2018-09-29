@@ -40,6 +40,34 @@ namespace ZbW.Testing.Dms.Client.UnitTests
         }
 
 
+        [Test]
+        public void serealisieren_Normallfall_GibtNichtNull()
+        {
+            var dS = new DateiService();
+            var seri_Mock = A.Fake<SerialisierenTestable>();
+            var md_Stub = A.Fake<MetadataItem>();
+
+            var resultat = dS.serealisiereMetaData(seri_Mock, md_Stub);
+
+            Assert.That(resultat, Is.Not.Null);
+        }
+
+        [Test]
+
+        public void deserealisieren_Normalfall_GibtNichtNull()
+        {
+            var dS = new DateiService();
+            var seri_Mock = A.Fake<SerialisierenTestable>();
+
+            var resultat = dS.deserealisiereMetadataItem(seri_Mock, "Test");
+
+            Assert.That(resultat, Is.Not.Null);
+
+        }
+
+
+
+
         }
 
     }

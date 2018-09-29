@@ -87,7 +87,7 @@ namespace ZbW.Testing.Dms.Client.Services
             foreach (var xmlPath in xmlPfadeVonAllenOrdnern)
             {
 
-                metadataItemListe.Add(this._dateiService.deseralisiereMetaData((String)xmlPath));
+                metadataItemListe.Add(this._dateiService.deserealisiereMetadataItem(_dateiService.seriTestable, (String)xmlPath));
             }
 
             this.MetadataItems = metadataItemListe.Cast<MetadataItem>().ToList();

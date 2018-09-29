@@ -80,6 +80,7 @@
     <Compile Include="Repositories\ComboBoxItems.cs" />
     <Compile Include="Services\DateiService.cs" />
     <Compile Include="Services\RepoService.cs" />
+    <Compile Include="Services\SerialisierenTestable.cs" />
     <Compile Include="Services\SuchService.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
