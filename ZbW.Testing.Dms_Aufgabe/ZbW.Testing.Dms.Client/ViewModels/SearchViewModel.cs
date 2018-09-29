@@ -8,7 +8,7 @@ namespace ZbW.Testing.Dms.Client.ViewModels
     using Prism.Commands;
     using Prism.Mvvm;
 
-    using ZbW.Testing.Dms.Client.Model;
+    using ZbW.Testing.Dms.Client.Services;
     using ZbW.Testing.Dms.Client.Repositories;
 
     public class SearchViewModel : BindableBase

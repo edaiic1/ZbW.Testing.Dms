@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using FakeItEasy;
+using NUnit.Framework;
+using ZbW.Testing.Dms.Client.Services;
+
+
+namespace ZbW.Testing.Dms.Client.UnitTests
+{
+    [TestFixture]
+    class DateiServiceTests
+    {
+
+        [Test]
+        public void getDateiName_Normalfall_RichtigerFileName()
+        {
+            var dS = new DateiService();
+            var dateityp = ".pdf"; 
+            var docId = new Guid("126f26a3-722b-5b62-52e4-51557f6ab412");
+
+            var resultat = dS.getDateiName(docId, dateityp);
+
+            Assert.That(resultat,Is.EqualTo(docId + "_Content" + dateityp));
+        }
+
+
+
+        [Test]
+        public void getMetaDateiName_NormallFall_RichtigerFileName()
+        {
+            var dS = new DateiService();
+            var docId = new Guid("126f26a3-722b-5b62-52e4-51557f6ab412");
+
+            var resultat = dS.getDateiNamenMetaFile(docId);
+
+            Assert.That(resultat,Is.EqualTo(docId + "Metadata.xml"));
+        }
+
+
+        }
+
+    }
+

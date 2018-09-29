@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 using System.Windows;
-using ZbW.Testing.Dms.Client.Model;
+using ZbW.Testing.Dms.Client.Services;
 
 namespace ZbW.Testing.Dms.Client.ViewModels
 {
@@ -14,7 +14,7 @@ namespace ZbW.Testing.Dms.Client.ViewModels
 
     using ZbW.Testing.Dms.Client.Repositories;
 
-    internal class DocumentDetailViewModel : BindableBase
+    public class DocumentDetailViewModel : BindableBase
     {
         private readonly Action _navigateBack;
 

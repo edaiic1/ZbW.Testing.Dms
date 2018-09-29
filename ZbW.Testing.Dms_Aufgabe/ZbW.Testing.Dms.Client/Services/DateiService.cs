@@ -7,11 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
-using ZbW.Testing.Dms.Client.Model;
+using ZbW.Testing.Dms.Client.Services;
 
 namespace ZbW.Testing.Dms.Client.Services
 {
-    class DateiService
+    public class DateiService
     {
 
         public String getDateiNamenMetaFile(Guid docId)

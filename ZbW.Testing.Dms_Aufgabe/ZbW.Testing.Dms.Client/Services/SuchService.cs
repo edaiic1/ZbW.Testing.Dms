@@ -5,11 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZbW.Testing.Dms.Client.Model;
+using ZbW.Testing.Dms.Client.Services;
 
 namespace ZbW.Testing.Dms.Client.Services
 {
-    class SuchService
+    public class SuchService
     {
         private List<MetadataItem> _mdIs;
         private RepoService _repoService;

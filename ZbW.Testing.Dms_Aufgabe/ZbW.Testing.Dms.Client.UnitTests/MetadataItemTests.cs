@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FakeItEasy;
 using NUnit.Framework;
-using ZbW.Testing.Dms.Client.Model;
+using ZbW.Testing.Dms.Client.Services;
 
 namespace ZbW.Testing.Dms.Client.UnitTests
 {
@@ -12,15 +13,18 @@ namespace ZbW.Testing.Dms.Client.UnitTests
     [TestFixture]
     class MetadataItemTests
     {
-        // Hier ist ein Mock nötig, da externe Abhängigkeit (Dateisystem)
+        
 
         [Test]
-        public void DateiHinzuFuegen_DateiwirdHinzugefuegt()
+        public void DateiHinzuFuegen_Normalfall_DateiwirdHinzugefuegt()
         {
             var metaDataItem = new MetadataItem();
-
-
             
+
+            var repoDirFake = A.Fake<RepoService>();
+            
+
+
         }
     }
 }

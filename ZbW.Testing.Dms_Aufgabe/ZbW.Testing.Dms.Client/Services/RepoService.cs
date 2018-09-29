@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ZbW.Testing.Dms.Client.Services
 {
-    class RepoService
+    public class RepoService
     {
         private String repoDir;
 

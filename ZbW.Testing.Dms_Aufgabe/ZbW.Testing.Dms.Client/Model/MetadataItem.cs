@@ -6,7 +6,7 @@ using System.Windows.Media;
 using System.Xml.Serialization;
 using ZbW.Testing.Dms.Client.Services;
 
-namespace ZbW.Testing.Dms.Client.Model
+namespace ZbW.Testing.Dms.Client.Services
 {
     public class MetadataItem
     {
