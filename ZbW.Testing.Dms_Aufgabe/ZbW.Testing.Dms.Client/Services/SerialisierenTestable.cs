@@ -19,8 +19,9 @@ namespace ZbW.Testing.Dms.Client.Services
         }
 
 
-        public virtual String SerialisiereeMetadataItem(SerialisierenTestable seriTestable, MetadataItem mdI)
+        public virtual String SerialisiereMetadataItem(SerialisierenTestable seriTestable, MetadataItem mdI)
         {
+
             XmlSerializer xmlseri = new XmlSerializer(typeof(MetadataItem));
             StringWriter stringwriter = new StringWriter();
             XmlWriter writer = XmlWriter.Create(stringwriter);
@@ -34,13 +35,13 @@ namespace ZbW.Testing.Dms.Client.Services
             return seriXml;
         }
 
-        public virtual MetadataItem DeserializeMetadataItem(String path)
+        public virtual MetadataItem DeserealisiereMetadataItem(String pfad)
         {
             XmlSerializer seri = new XmlSerializer(typeof(MetadataItem));
 
-            StreamReader reader = new StreamReader(path);
-            var mdI = (MetadataItem)seri.Deserialize(reader);
-            reader.Close();
+            StreamReader lesen = new StreamReader(pfad);
+            var mdI = (MetadataItem)seri.Deserialize(lesen);
+            lesen.Close();
 
             return mdI;
         }

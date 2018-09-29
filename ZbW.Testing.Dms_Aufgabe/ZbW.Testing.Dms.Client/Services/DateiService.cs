@@ -14,6 +14,11 @@ namespace ZbW.Testing.Dms.Client.Services
     public class DateiService
     {
         internal SerialisierenTestable seriTestable { get; set; }
+
+        public DateiService()
+        {
+          seriTestable = new SerialisierenTestable();
+        }
         public String getDateiNamenMetaFile(Guid docId)
         {
             string dateiname = String.Concat(docId, "Metadata.xml");
@@ -31,6 +36,8 @@ namespace ZbW.Testing.Dms.Client.Services
             Process.Start(mdI._pfadAlt);
         }
 
+        // LOGIK VERSCHOBBEN
+        //
         //public String serealisieren(MetadataItem mdI)
         //{
         //    XmlSerializer xmlseri = new XmlSerializer(typeof(MetadataItem));
@@ -43,24 +50,26 @@ namespace ZbW.Testing.Dms.Client.Services
 
         //}
 
-        public String serealisiereMetaData(SerialisierenTestable seriT, MetadataItem mdI)
+        public String serealisiereMetaData(SerialisierenTestable seriTestable, MetadataItem mdI)
         {
-            var resultat = seriT.SerialisiereeMetadataItem(seriT, mdI);
+            var resultat = seriTestable.SerialisiereMetadataItem(seriTestable, mdI);
             return resultat;
         }
 
-        public MetadataItem deserealisiereMetadataItem(SerialisierenTestable seriT, String pfad)
+        public MetadataItem deserealisiereMetadataItem(SerialisierenTestable seriTestable, String pfad)
         {
-            var resultat = seriT.DeserializeMetadataItem(pfad);
+            var resultat = seriTestable.DeserealisiereMetadataItem(pfad);
             return resultat;
         }
 
 
+        // LOGIK VERSCHOBEN
+        //
         //public MetadataItem deseralisiereMetaData(string path)
         //{
         //    XmlSerializer xmlseri = new XmlSerializer(typeof(MetadataItem));
         //    StreamReader lesen = new StreamReader(path);
-        //    var mdI = (MetadataItem) xmlseri.Deserialize(lesen);
+        //    var mdI = (MetadataItem)xmlseri.Deserialize(lesen);
         //    lesen.Close();
         //    return mdI;
         //}
